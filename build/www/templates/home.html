@@ -1,10 +1,46 @@
 <ion-view title="home">
-	<ion-content class="">
-		<h1>Home</h1>
-		<p>Some demo text here too</p>
-
+	<ion-content class="content">
 		<div id="map-canvas" ng-controller="mapCtrl">
-			<p id="geolocation">Finding geolocation...</p>
+			<div id="map-canvas-details">
+				<div id="map-user-location-details">
+					<h2>User name</h2>
+					<p id="current-address"></p>
+				</div>
+
+				<div id="map-weather">
+					<span class="ion-umbrella"></span>
+				</div>
+
+				<div id="map-time">
+					<span id="home-time">00:00</span>
+					<span id="home-date">24/05/72</span>
+				</div>
+			</div>
+
+			<p id="placeholder">Finding geolocation...</p>
+		</div>
+
+		<div id="home-portal-menu">
+			<div id="home-portal-menu-reaction-contacts-row" class="row">
+				<div class="col col50">Emergency Reaction</div>
+				<div class="col col50">Emergency Contacts</div>
+			</div>
+
+			<div id="home-portal-menu-file-report-row" class="row">
+				<div class="col">File Accident Report</div>
+			</div>
+
+			<div id="home-portal-menu-guides-row" class="row">
+				<div class="col">Guides</div>
+			</div>
+
+			<div id="home-portal-menu-faqs-row" class="row">
+				<div class="col">FAQ's</div>
+			</div>
+
+			<div id="home-portal-menu-account-row" class="row">
+				<div class="col">Account</div>
+			</div>
 		</div>
 	</ion-content>
 </ion-view>

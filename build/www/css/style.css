@@ -1,4 +1,82 @@
+html{
+	font-size:16px;
+}
+
+.scroll {
+    height: 100%;
+}
+
 /* Home Portal */
+
+#placeholder,
+#map-canvas #map{
+	height:220px;
+}
+
 #map-canvas{
+	position:relative;
 	background:#e1e1e1;
+}
+
+#map-canvas #map-canvas-details{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:44;
+	color:#ffffff;
+	text-shadow:0px 0px 3px rgba(0, 0, 0, 0.95);
+}
+
+#map-canvas #map-user-location-details,
+#map-canvas #map-weather,
+#map-canvas #map-time{
+	position:absolute;
+}
+
+#map-canvas #map-user-location-details{
+	top:16px;
+	top:1rem;
+	left:16px;
+	left:1rem;
+}
+
+#map-canvas #map-user-location-details h2{
+	color:#ffffff;
+	font-weight:700;
+}
+
+#map-canvas #map-weather{
+	top:16px;
+	top:1rem;
+	right:16px;
+	right:1rem;
+	font-size:40px;
+	font-size:2.5rem;
+}
+
+#map-canvas #map-time{
+	right:16px;
+	right:1rem;
+	bottom:20px;
+	bottom:1.25rem;
+	text-align:right;
+}
+
+#map-canvas #map-time #home-time{
+	margin-bottom:8px;
+	margin-bottom:0.5rem;
+	display:block;
+	font-size:32px;
+	font-size:2rem;
+	font-weight:700;
+}
+
+#map-canvas #map-time #home-date{
+	font-size:20px;
+}
+
+#home-portal-menu{
+	text-align:center;
 }

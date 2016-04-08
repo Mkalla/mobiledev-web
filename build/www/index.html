@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -12,10 +13,16 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
+    <!-- Google Maps -->
+    <script src="https://maps-api-ssl.google.com/maps/api/js?key=AIzaSyDGnub1l1cchM323j6v8VyyF0rfhlk21wI&sensor=true" async defer></script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/ng-cordova.min.js"></script>
+    <script src="lib/moment/moment-with-locales.min.js"></script>
+    <script src="lib/angular-moment/angular-moment.min.js"></script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
@@ -24,7 +31,7 @@
   </head>
   <body ng-app="app">
     <ion-side-menus>
-      <ion-pane ion-side-menu-content>
+      <ion-pane ion-side-menu-content drag-content="false">
         <ion-nav-bar class="bar-positive">
           <ion-nav-buttons side="left">
             <button class="button button-icon button-clear ion-navicon"  menu-toggle="left" ng-click="openMenu()"></button>
