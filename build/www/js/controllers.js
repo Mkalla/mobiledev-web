@@ -45,6 +45,7 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 	    var m = document.createElement("DIV");
 		m.id = "map";	    
 
+		/* Disable user drag input for the map so it doesn't move about and add it inside our #map-canvas element */
 	    var att = document.createAttribute("data-tap-disabled");
 	    att.value = "true";
 	    m.setAttributeNode(att);
@@ -56,6 +57,7 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 
 	    var myLatLng = new google.maps.LatLng(lat, lng);
 
+	    /* Map options object */
         var mapOptions = {
             center: myLatLng,
             zoom: 16,
@@ -63,12 +65,22 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
             disableDefaultUI: true
         };
 
+        /* Let's get our map and add a position marker to it! */
 	    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 		var marker = new google.maps.Marker({position: myLatLng, map: map, title: 'Current Position', animation: google.maps.Animation.DROP});
 
+		/* Assign our map to the $scope of the current view and below is our error callback function */
 	    $scope.map = map;
 	}, function(error){
 	    alert('code: '    + error.code    + '\n' +
 	          'message: ' + error.message + '\n');
 	});
 })
+
+app.controller('wthrCtrl', function($scope, $state, $cordovaGeolocation, wthrService){
+	/* Vars */
+
+	/* Data injections for our view from our service(s) */
+	$scope.weather = wthrService.getWeather();
+})
+
