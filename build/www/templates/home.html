@@ -7,8 +7,13 @@
 					<p id="current-address"></p>
 				</div>
 
-				<div id="map-weather" ng-controller="wthrCtrl">
-					<span class="ion-umbrella">{{weather}}</span>
+				<div id="map-weather" class="weather">
+					<div class="map-weather-details weather-details" ng-controller="wthrCtrl" ng-cloak>
+						{{weather}}
+						<p class="weather-temp">{{weather.latestReport.T}} {{weather.Param[1].units}}</p>
+						<p class="weather-humidity">Hum: {{weather.latestReport.H}}{{weather.Param[9].units}}</p>
+						<p class="weather-wind">{{weather.latestReport.S}}{{weather.Param[4].units}} wind, {{weather.latestReport.D}}</p>
+					</div>
 				</div>
 
 				<div id="map-time">

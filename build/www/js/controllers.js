@@ -77,10 +77,18 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 	});
 })
 
-app.controller('wthrCtrl', function($scope, $state, $cordovaGeolocation, wthrService){
-	/* Vars */
+app.controller('wthrCtrl', function($ionicPlatform, $scope, $state, wthrService){
+	$ionicPlatform.ready(function(){
+		var pos;
+		var site_id;
 
-	/* Data injections for our view from our service(s) */
-	$scope.weather = wthrService.getWeather();
+    	wthrService.getCurrentPosition().then(function(data){ 
+    		pos = data;
+    		$scope.weather = wthrService.getWeather(pos);
+    		console.log($scope.weather);
+    	});
+
+    	//wthrService.getSiteId();
+	});
 })
 

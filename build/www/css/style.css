@@ -1,3 +1,7 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 html{
 	font-size:16px;
 }
@@ -54,6 +58,14 @@ html{
 	right:1rem;
 	font-size:40px;
 	font-size:2.5rem;
+	text-align:right;
+}
+
+.weather-details .weather-humidity,
+.weather-details .weather-wind{
+	margin:0;
+	font-size:16px;
+	font-size:1rem;
 }
 
 #map-canvas #map-time{
