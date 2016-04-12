@@ -1,51 +1,5 @@
-<ion-view title="home">
-	<ion-content class="content">
-		<div id="map-canvas" ng-controller="mapCtrl">
-			<div id="map-canvas-details">
-				<div id="map-user-location-details">
-					<h2>User name</h2>
-					<p id="current-address"></p>
-				</div>
-
-				<div id="map-weather" class="weather">
-					<div class="map-weather-details weather-details" ng-controller="wthrCtrl" ng-cloak>
-						{{weather}}
-						<p id="weather-temp" class="weather-temp">{{weather.latestReport.T}} {{weather.Param[1].units}}</p>
-						<p id="weather-humidity" class="weather-humidity">Hum: {{weather.latestReport.H}}{{weather.Param[9].units}}</p>
-						<p id="weather-wind" class="weather-wind">{{weather.latestReport.S}}{{weather.Param[4].units}} wind, {{weather.latestReport.D}}</p>
-					</div>
-				</div>
-
-				<div id="map-time">
-					<span id="home-time">00:00</span>
-					<span id="home-date">24/05/72</span>
-				</div>
-			</div>
-
-			<p id="placeholder">Finding geolocation...</p>
-		</div>
-
-		<div id="home-portal-menu">
-			<div id="home-portal-menu-reaction-contacts-row" class="row">
-				<div class="col col50">Emergency Reaction</div>
-				<div class="col col50">Emergency Contacts</div>
-			</div>
-
-			<div id="home-portal-menu-file-report-row" class="row">
-				<div class="col">File Accident Report</div>
-			</div>
-
-			<div id="home-portal-menu-guides-row" class="row">
-				<div class="col">Guides</div>
-			</div>
-
-			<div id="home-portal-menu-faqs-row" class="row">
-				<div class="col">FAQ's</div>
-			</div>
-
-			<div id="home-portal-menu-account-row" class="row">
-				<div class="col">Account</div>
-			</div>
-		</div>
-	</ion-content>
+<ion-view title="Past Reports">
+  <ion-content class="padding">
+    <h1>Past Reports</h1>
+  </ion>
 </ion-view>

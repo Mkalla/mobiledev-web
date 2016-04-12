@@ -105,7 +105,19 @@ app.controller('faqCtrl', function($scope, $ionicSideMenuDelegate){
 	};
 })
 
+app.controller('termsCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
 app.controller('registerCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
+app.controller('emContactsCtrl', function($scope, $ionicSideMenuDelegate){
 	$scope.openMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
@@ -117,13 +129,19 @@ app.controller('emReactCtrl', function($scope, $ionicSideMenuDelegate){
 	};
 })
 
-app.controller('emContCtrl', function($scope, $ionicSideMenuDelegate){
+app.controller('accRepCtrl', function($scope, $ionicSideMenuDelegate){
 	$scope.openMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
 })
 
-app.controller('accRepCtrl', function($scope, $ionicSideMenuDelegate){
+app.controller('accRepSglCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
+app.controller('accRepListCtrl', function($scope, $ionicSideMenuDelegate){
 	$scope.openMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};

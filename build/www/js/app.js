@@ -21,6 +21,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: 'faqCtrl'   
   })
 
+  $stateProvider.state('terms', {
+    url: '/terms',
+    templateUrl: 'templates/terms.html',
+    controller: 'termsCtrl'   
+  })
+
   $stateProvider.state('register', {
     url: '/register',
     templateUrl: 'templates/register.html',
@@ -30,67 +36,31 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('em-contacts', {
     url: '/em-contacts',
     templateUrl: 'templates/em-contacts.html',
-    controller: 'emContCtrl'   
+    controller: 'emContactsCtrl'   
   })
 
   $stateProvider.state('em-react', {
     url: '/em-react',
     templateUrl: 'templates/em-react-home.html',
-    controller: 'emergencyReacCtrl',
-    views: {
-      'em-react-tab-1': {
-        'templateUrl': 'templates/em-tab-1.html',
-        controller: 'emReactCtrl'
-      },
-      'em-react-tab-2': {
-        'templateUrl': 'templates/em-tab-2.html',
-        controller: 'emReactCtrl'        
-      },
-      'em-react-tab-3': {
-        'templateUrl': 'templates/em-tab-3.html',
-        controller: 'emReactCtrl'        
-      },
-      'em-react-tab-4': {
-        'templateUrl': 'templates/em-tab-4.html',
-        controller: 'emReactCtrl'        
-      }
-    }
+    controller: 'emReactCtrl'
   })
 
-  $stateProvider.state('acc-report-submit', {
-    url: '/report-submit',
+  $stateProvider.state('acc-rep-submit', {
+    url: '/acc-rep-submit',
     templateUrl: 'templates/acc-rep-submit.html',
-    controller: 'accRepCtrl',
-    views: {
-      'acc-rep-step-1': {
-        'templateUrl': 'templates/acc-rep-tab-1.html',
-        controller: 'accRepCtrl'
-      },
-      'acc-rep-step-2': {
-        'templateUrl': 'templates/acc-rep-tab-2.html',
-        controller: 'accRepCtrl'        
-      },
-      'acc-rep-step-3': {
-        'templateUrl': 'templates/acc-rep-tab-3.html',
-        controller: 'accRepCtrl'        
-      },
-      'acc-rep-step-4': {
-        'templateUrl': 'templates/acc-rep-tab-4.html',
-        controller: 'accRepCtrl'        
-      }
-    }
+    controller: 'accRepCtrl'
   })
 
   $stateProvider.state('acc-reports-list', {
-    url: '/acc-reps-list.html',
+    url: '/acc-reps-list',
     templateUrl: 'templates/acc-reps-list.html',
-    controller: 'emContCtrl'   
+    controller: 'accRepListCtrl'   
   })
 
   $stateProvider.state('acc-report-single', {
-    url: '/acc-rep-single.html',
+    url: '/acc-rep-single',
     templateUrl: 'templates/acc-rep.html',
-    controller: 'emContCtrl'   
+    controller: 'emRepSglCtrl'   
   })
 })
 
