@@ -4,6 +4,7 @@
 
 html{
 	font-size:16px;
+	color:#808080;
 }
 
 .scroll {
@@ -61,6 +62,20 @@ html{
 	text-align:right;
 }
 
+.weather-loading-message{
+	font-size:24px;
+	font-size:1.5rem;
+}
+
+.weather-loading-message > .weather-loading-message{
+	display:block;
+}
+
+.map-weather-details.loaded .weather-loading-message{
+	display:none;
+}
+
+.weather-details .weather-type,
 .weather-details .weather-humidity,
 .weather-details .weather-wind{
 	margin:0;
@@ -91,4 +106,19 @@ html{
 
 #home-portal-menu{
 	text-align:center;
+}
+
+#home-portal-menu .row{
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #d5d5d5;
+	clear:both;
+}
+
+#home-portal-menu .row .col50:first-of-type{
+	border-right:1px solid #d5d5d5;
+}
+
+#home-portal-menu .row .col{
+	background:#f1f1f1;
 }

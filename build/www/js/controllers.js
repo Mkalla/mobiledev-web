@@ -21,12 +21,6 @@ app.controller('homeCtrl', function($scope, $ionicSideMenuDelegate){
     setInterval(update, 1000 * 10);
 })
 
-app.controller('faqCtrl', function($scope, $ionicSideMenuDelegate){
-	$scope.openMenu = function () {
-		$ionicSideMenuDelegate.toggleLeft();
-	};
-})
-
 app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 	/* The options for our map */
 	var posOptions = {
@@ -67,7 +61,26 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 
         /* Let's get our map and add a position marker to it! */
 	    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-		var marker = new google.maps.Marker({position: myLatLng, map: map, title: 'Current Position', animation: google.maps.Animation.DROP});
+
+		/* Get the approximate address! */
+		var geocoder = new google.maps.Geocoder;
+
+		geocoder.geocode({'location': myLatLng}, function(results, status) {
+		    if (status === google.maps.GeocoderStatus.OK) {
+		      if (results[1]) {
+				var marker = new google.maps.Marker({position: myLatLng, map: map, title: 'Current Position', animation: google.maps.Animation.DROP});
+		        var address = results[0].formatted_address;
+
+		        /* Output address to map */
+		        if(document.getElementById('home-current-address') != null) document.getElementById('home-current-address').innerHTML = address.replace(/[,]/g, ',<br>');
+		      } else {
+		        window.alert('No results found');
+		      }
+		    } else {
+		      window.alert('Geocoder failed due to: ' + status);
+		    }
+		});
+
 
 		/* Assign our map to the $scope of the current view and below is our error callback function */
 	    $scope.map = map;
@@ -78,17 +91,40 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 })
 
 app.controller('wthrCtrl', function($ionicPlatform, $scope, $state, wthrService){
-	$ionicPlatform.ready(function(){
-		var pos;
-		var site_id;
+	var pos;
 
-    	wthrService.getCurrentPosition().then(function(data){ 
-    		pos = data;
-    		$scope.weather = wthrService.getWeather(pos);
-    		console.log($scope.weather);
-    	});
-
-    	//wthrService.getSiteId();
+	wthrService.getCurrentPosition().then(function(data){ 
+		pos = data;
+		$scope.weather = wthrService.getWeather(pos);
 	});
 })
 
+app.controller('faqCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
+app.controller('registerCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
+app.controller('emReactCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
+app.controller('emContCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
+app.controller('accRepCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})

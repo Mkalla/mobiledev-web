@@ -4,15 +4,16 @@
 			<div id="map-canvas-details">
 				<div id="map-user-location-details">
 					<h2>User name</h2>
-					<p id="current-address"></p>
+					<p id="home-current-address"></p>
 				</div>
 
 				<div id="map-weather" class="weather">
 					<div class="map-weather-details weather-details" ng-controller="wthrCtrl" ng-cloak>
-						{{weather}}
-						<p class="weather-temp">{{weather.latestReport.T}} {{weather.Param[1].units}}</p>
-						<p class="weather-humidity">Hum: {{weather.latestReport.H}}{{weather.Param[9].units}}</p>
-						<p class="weather-wind">{{weather.latestReport.S}}{{weather.Param[4].units}} wind, {{weather.latestReport.D}}</p>
+						<p class="weather-loading-message">Getting your location...</p>
+						<p class="weather-temp"></p>
+						<p class="weather-type"></p>
+						<!-- <p class="weather-humidity"></p> -->
+						<p class="weather-wind"></p>
 					</div>
 				</div>
 
