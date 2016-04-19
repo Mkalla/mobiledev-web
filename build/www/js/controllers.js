@@ -90,6 +90,36 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 	});
 })
 
+app.controller('CameraCtrl', function($ionicPlatform, $scope, $cordovaCamera) {
+  $ionicPlatform.ready(function() {
+  	$scope.takePicture = function(){
+	    var options = {
+	      quality: 80,
+	      destinationType: Camera.DestinationType.DATA_URL,
+	      sourceType: Camera.PictureSourceType.CAMERA,
+	      allowEdit: true,
+	      encodingType: Camera.EncodingType.JPEG,
+	      targetWidth: 100,
+	      targetHeight: 100,
+	      popoverOptions: CameraPopoverOptions,
+	      saveToPhotoAlbum: false,
+		  correctOrientation:true
+	    };
+
+	    $cordovaCamera.getPicture({}).then(function(imageData) {
+	    	console.log(imageData);
+	    	$scope.imgURI = "data:image/jpeg;base64," + imageData;
+
+	      var image = document.getElementById('image');
+	      alert('getPicture()');
+	    }, function(err) {
+	      // error
+	      alert(err);
+	    });
+  	}
+  });
+})
+
 app.controller('wthrCtrl', function($ionicPlatform, $scope, $state, wthrService){
 	var pos;
 
