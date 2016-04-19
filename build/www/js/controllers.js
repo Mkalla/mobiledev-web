@@ -106,12 +106,12 @@ app.controller('CameraCtrl', function($ionicPlatform, $scope, $cordovaCamera) {
 		  correctOrientation:true
 	    };
 
-	    $cordovaCamera.getPicture({}).then(function(imageData) {
-	    	console.log(imageData);
+
+	    $cordovaCamera.getPicture(options).then(function(imageData) {
+	    	alert(imageData);
 	    	$scope.imgURI = "data:image/jpeg;base64," + imageData;
 
 	      var image = document.getElementById('image');
-	      alert('getPicture()');
 	    }, function(err) {
 	      // error
 	      alert(err);
