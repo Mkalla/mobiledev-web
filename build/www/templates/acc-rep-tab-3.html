@@ -1,51 +1,58 @@
-<ion-view title="home">
-	<ion-content class="content">
-		<div id="map-canvas" ng-controller="mapCtrl">
-			<div id="map-canvas-details">
-				<div id="map-user-location-details">
-					<h2>User name</h2>
-					<p id="current-address"></p>
-				</div>
+<ion-view title="Weather/ location">
+  <ion-content class="content">
+    <div id="map-canvas" ng-controller="mapCtrl">
+      <div id="map-canvas-details">
+        <div id="map-user-location-details">
+          <h2>User name</h2>
+          <p id="current-address"></p>
+        </div>
+        <div id="map-weather" class="weather">
+          <div class="map-weather-details weather-details" ng-controller="wthrCtrl" ng-cloak>
+            {{weather}}
+            <p id="weather-temp" class="weather-temp">{{weather.latestReport.T}} {{weather.Param[1].units}}</p>
+            <p id="weather-humidity" class="weather-humidity">Hum:
+              {{weather.latestReport.H}}{{weather.Param[9].units}}</p>
+            <p id="weather-wind" class="weather-wind">{{weather.latestReport.S}}{{weather.Param[4].units}} wind,
+              {{weather.latestReport.D}}</p>
+          </div>
+        </div>
+        <div id="map-time">
+          <span id="home-time">00:00</span>
+          <span id="home-date">24/05/72</span>
+        </div>
+      </div>
+      <p id="placeholder">Finding geolocation...</p>
+    </div>
+    <div>
+      <label class="item item-input">
+        <textarea rows="5" placeholder="Accident details here"></textarea>
+      </label>
+    </div>
+    <div class="button-bar">
+      <a href="#/app/acc-reps-tab2" class="button">Back</a>
+      <a href="#/app/acc-reps-tab4" class="button">Next</a>
+    </div>
+    <div id="home-portal-menu">
+      <div id="home-portal-menu-reaction-contacts-row" class="row">
+        <div class="col col50"><a href="#/app/em-react">Emergency Reaction</a></div>
+        <div class="col col50"><a href="#/app/em-contacts">Emergency Contacts</a></div>
+      </div>
 
-				<div id="map-weather" class="weather">
-					<div class="map-weather-details weather-details" ng-controller="wthrCtrl" ng-cloak>
-						{{weather}}
-						<p id="weather-temp" class="weather-temp">{{weather.latestReport.T}} {{weather.Param[1].units}}</p>
-						<p id="weather-humidity" class="weather-humidity">Hum: {{weather.latestReport.H}}{{weather.Param[9].units}}</p>
-						<p id="weather-wind" class="weather-wind">{{weather.latestReport.S}}{{weather.Param[4].units}} wind, {{weather.latestReport.D}}</p>
-					</div>
-				</div>
+      <div class="row home-portal-menu-file-report-row">
+        <div class="col col50"><a href="#/app/acc-reps-tab1">File Accident Report</a></div>
+      </div>
 
-				<div id="map-time">
-					<span id="home-time">00:00</span>
-					<span id="home-date">24/05/72</span>
-				</div>
-			</div>
+      <div class="row home-portal-menu-file-report-row">
+        <div class="col col50"><a href="#/app/em-react">Guides</a></div>
+      </div>
 
-			<p id="placeholder">Finding geolocation...</p>
-		</div>
+      <div class="row home-portal-menu-file-report-row">
+        <div class="col col50"><a href="#/app/faq">FAQs</a></div>
+      </div>
 
-		<div id="home-portal-menu">
-			<div id="home-portal-menu-reaction-contacts-row" class="row">
-				<div class="col col50">Emergency Reaction</div>
-				<div class="col col50">Emergency Contacts</div>
-			</div>
-
-			<div id="home-portal-menu-file-report-row" class="row">
-				<div class="col">File Accident Report</div>
-			</div>
-
-			<div id="home-portal-menu-guides-row" class="row">
-				<div class="col">Guides</div>
-			</div>
-
-			<div id="home-portal-menu-faqs-row" class="row">
-				<div class="col">FAQ's</div>
-			</div>
-
-			<div id="home-portal-menu-account-row" class="row">
-				<div class="col">Account</div>
-			</div>
-		</div>
-	</ion-content>
+      <div class="row home-portal-menu-file-report-row">
+        <div class="col col50"><a href="#/app/logon">Account</a></div>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

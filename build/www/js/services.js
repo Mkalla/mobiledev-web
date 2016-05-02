@@ -37,7 +37,7 @@ app.service('wthrService', ['$window', '$http', '$q', '$cordovaGeolocation', fun
 
 			// where you are
             standpoint = new Location(null, "Your location", lat, lng);
-			
+
 			// just interested in the closest location in the list
             closest = $window.getNearest(standpoint, locations);
             //console.log(closest);
@@ -49,7 +49,7 @@ app.service('wthrService', ['$window', '$http', '$q', '$cordovaGeolocation', fun
 					loading_msg[i].innerHTML = 'Getting weather...';
 				}
 			}
-            
+
 			// or perhaps the 5 closest
             // nearby = getNNearest(standpoint, locations, 5);
 
@@ -66,7 +66,7 @@ app.service('wthrService', ['$window', '$http', '$q', '$cordovaGeolocation', fun
 				weatherData.locData = {};
 				weatherData.locData.currentDayReps = wthrJSON.SiteRep.DV.Location.Period[1]; // The hourly weather readings for the current day
 				var latestRepKey = (typeof wthrJSON.SiteRep.DV.Location.Period[1].Rep.length == 'undefined') ? 1 : wthrJSON.SiteRep.DV.Location.Period[1].Rep.length; // The length of the weather reports array per 24 hour time minus one, e.g. 8PM/2000hrs = 19
-				
+
 				if(latestRepKey == 1){
 					weatherData.latestReport = wthrJSON.SiteRep.DV.Location.Period[1].Rep;
 				}
@@ -189,39 +189,39 @@ app.service('wthrService', ['$window', '$http', '$q', '$cordovaGeolocation', fun
 
 							case 22:
 								weather_type_def = 'Light snow shower (night)';
-							break;		
+							break;
 
 							case 23:
 								weather_type_def = 'Light snow shower (day)';
-							break;	
+							break;
 
 							case 24:
 								weather_type_def = 'Light snow';
-							break;	
+							break;
 
 							case 25:
 								weather_type_def = 'Heavy snow shower (night)';
-							break;	
+							break;
 
 							case 26:
 								weather_type_def = 'Heavy snow shower (day)';
-							break;	
+							break;
 
 							case 27:
 								weather_type_def = 'Heavy snow';
-							break;	
+							break;
 
 							case 28:
 								weather_type_def = 'Thunder shower (night)';
-							break;	
+							break;
 
 							case 29:
 								weather_type_def = 'Thunder shower (day)';
-							break;	
+							break;
 
 							case 30:
 								weather_type_def = 'Thunder';
-							break;			
+							break;
 
 							default:
 								weather_type_def = 'Not available';
@@ -257,7 +257,7 @@ app.service('wthrService', ['$window', '$http', '$q', '$cordovaGeolocation', fun
 
 			/* Our callback function to fire in case of an error */
 			function getForecastOnError(error){
-				alert('Weather request error\n (Invalid Response)');
+				alert('Weather request error:\n' + error);
 			};
 
 			/* MET Office data point URL explained here: http://www.metoffice.gov.uk/datapoint/getting-started */
@@ -275,7 +275,7 @@ app.service('wthrService', ['$window', '$http', '$q', '$cordovaGeolocation', fun
 					getForecastOnSuccess(forecastData);
 				}
 				else if(forecastXmlHttp.readyState == 4 && forecastXmlHttp.status != 200){
-					getForecastOnError();
+					getForecastOnError(forecastXmlHttp.status);
 				}
 			};
 
@@ -306,7 +306,7 @@ app.service('wthrService', ['$window', '$http', '$q', '$cordovaGeolocation', fun
 		};
 		*/
 
-		/* Make our request 
+		/* Make our request
 		xmlHttp.open("GET", req, true);
 		xmlHttp.send();*/
 

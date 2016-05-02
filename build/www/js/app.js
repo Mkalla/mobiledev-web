@@ -6,64 +6,202 @@
 var app = angular.module('app', ['ionic', 'ngCordova', 'angularMoment']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/')
 
-  /* Routing for our pages and tabs */
-  $stateProvider.state('home', {
-    url: '/',
-    templateUrl: 'templates/home.html',
-    controller: 'homeCtrl'
-  })
+  $stateProvider.state('app', {
+      url: '/app',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller:"menuCtrl"
+    })
 
-  $stateProvider.state('faq', {
-    url: '/faq',
-    templateUrl: 'templates/faq.html',
-    controller: 'faqCtrl'   
-  })
+    /* Routing for our pages and tabs */
+    .state('app.home', {
+      url: '/home',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/home.html',
+          controller: 'homeCtrl'
+        }
+      }
+    })
 
-  $stateProvider.state('terms', {
-    url: '/terms',
-    templateUrl: 'templates/terms.html',
-    controller: 'termsCtrl'   
-  })
+    .state('app.faq', {
+      url: '/faq',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/faq.html',
+          controller: 'faqCtrl'
+        }
+      }
+    })
 
-  $stateProvider.state('register', {
-    url: '/register',
-    templateUrl: 'templates/register.html',
-    controller: 'registerCtrl'   
-  })
+    .state('app.terms', {
+      url: '/terms',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/terms.html',
+          controller: 'termsCtrl'
+        }
+      }
+    })
 
-  $stateProvider.state('em-contacts', {
-    url: '/em-contacts',
-    templateUrl: 'templates/em-contacts.html',
-    controller: 'emContactsCtrl'   
-  })
+    .state('app.register', {
+      url: '/register',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/register.html',
+          controller: 'registerCtrl'
+        }}
+    })
 
-  $stateProvider.state('em-react', {
-    url: '/em-react',
-    templateUrl: 'templates/em-react-home.html',
-    controller: 'emReactCtrl'
-  })
+    .state('app.em-contacts', {
+      url: '/em-contacts',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/em-contacts.html',
+          controller: 'emContactsCtrl'
+        }}
+    })
 
-  $stateProvider.state('acc-rep-submit', {
-    url: '/acc-rep-submit',
-    templateUrl: 'templates/acc-rep-submit.html',
-    controller: 'accRepCtrl'
-  })
+    .state('app.em-react', {
+      url: '/em-react',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/em-react-home.html',
+          controller: 'emReactCtrl'
+        }}
+    })
 
-  $stateProvider.state('acc-reports-list', {
-    url: '/acc-reps-list',
-    templateUrl: 'templates/acc-reps-list.html',
-    controller: 'accRepListCtrl'   
-  })
+    .state('app.acc-rep-submit', {
+      url: '/acc-rep-submit',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/acc-rep-submit.html',
+          controller: 'accRepCtrl'
+        }}
+    })
 
-  $stateProvider.state('acc-report-single', {
-    url: '/acc-rep-single',
-    templateUrl: 'templates/acc-rep.html',
-    controller: 'emRepSglCtrl'   
-  })
-})
+    .state('app.acc-reports-tab-1', {
+      url: '/acc-reps-tab1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/acc-rep-tab-1.html',
+          controller: 'accRepListCtrl'
+        }}
+    })
+
+    .state('app.acc-reports-tab-2', {
+      url: '/acc-reps-tab2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/acc-rep-tab-2.html',
+          controller: 'accRepListCtrl'
+        }}
+    })
+
+    .state('app.acc-reports-tab-3', {
+      url: '/acc-reps-tab3',views: {
+        'menuContent': {
+          templateUrl: 'templates/acc-rep-tab-3.html',
+          controller: 'accRepListCtrl'
+        }}
+    })
+
+    .state('app.acc-reports-tab-4', {
+      url: '/acc-reps-tab4',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/acc-rep-tab-4.html',
+          controller: 'accRepListCtrl'
+        }
+      }
+    })
+
+    .state('app.acc-reports-list', {
+      url: '/acc-reps-list',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/acc-reps-list.html',
+          controller: 'accRepListCtrl'
+        }
+      }
+    })
+
+    .state('app.acc-report-single', {
+      url: '/acc-rep-single',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/acc-rep.html',
+          controller: 'emRepSglCtrl'
+        }
+      }
+    })
+
+    .state('app.register-done', {
+      url: '/register-done',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/register-done.html',
+          controller: 'emRepSglCtrl'
+        }
+      }
+    })
+
+    .state('app.logon', {
+      url: '/logon',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/logon.html',
+          controller: 'logonCtrl'
+        }
+      }
+    })
+
+    .state('app.members', {
+      url: '/members',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/members.html',
+          controller: 'logonCtrl'
+        }
+      }
+    })
+
+    .state('app.em-tab-1', {
+      url: '/em-tab1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/em-tab-1.html',
+          controller: 'emReactCtrl'
+        }
+      }
+    })
+
+    .state('app.em-tab-2', {
+      url: '/em-tab2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/em-tab-2.html',
+          controller: 'emReactCtrl'
+        }
+      }
+    })
+
+    .state('app.em-tab-3', {
+      url: '/em-tab3',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/em-tab-3.html',
+          controller: 'emReactCtrl'
+        }
+      }
+    });
+
+  $urlRouterProvider.otherwise('/app/home');
+
+
+});
 
 app.run(function(amMoment) {
-    amMoment.changeLocale('en');
+  amMoment.changeLocale('en');
 });

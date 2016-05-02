@@ -1,0 +1,56 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu side="left" >
+    <ul class="list">
+      <ion-item menu-close="" href="#/app/home" title="Home">
+        Home
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/acc-reps-tab1" title="File Accident Report">
+        File Accident Report
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/acc-reps-list" title="View Past Reports">
+        View Past Reports
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/em-contacts" title="Emergency Contacts">
+        Emergency Contacts
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/em-react" title="Emergency Reaction Guide">
+        Emergency Reaction Guide
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/register" title="Enter Details">
+        Enter Details
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/faq" title="FAQ">
+        FAQ
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/terms" title="Terms">
+        Terms &amp; Conditions
+      </ion-item>
+    </ul>
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="openMenu()"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent">
+      <h1>test</h1>
+      <!--Main content goes here-->
+    </ion-nav-view>
+  </ion-side-menu-content>
+
+
+
+
+  <!--<ion-side-menu side="right">-->
+  <!--&lt;!&ndash; Right Side Menu content should go here&ndash;&gt;-->
+  <!--</ion-side-menu>-->
+</ion-side-menus>

@@ -1,7 +1,11 @@
-app.controller('homeCtrl', function($scope, $ionicSideMenuDelegate){
-	$scope.openMenu = function () {
-		$ionicSideMenuDelegate.toggleLeft();
-	};
+app.controller("menuCtrl", function($scope, $ionicSideMenuDelegate){
+  $scope.openMenu = function () {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+});
+
+app.controller('homeCtrl', function(){
+
 
 	/* Clock */
 	var time = document.getElementById('home-time'),
@@ -37,7 +41,7 @@ app.controller('mapCtrl', function($scope, $state, $cordovaGeolocation){
 
 	    /* Create our map element and output it */
 	    var m = document.createElement("DIV");
-		m.id = "map";	    
+		m.id = "map";
 
 		/* Disable user drag input for the map so it doesn't move about and add it inside our #map-canvas element */
 	    var att = document.createAttribute("data-tap-disabled");
@@ -123,7 +127,7 @@ app.controller('CameraCtrl', function($ionicPlatform, $scope, $cordovaCamera) {
 app.controller('wthrCtrl', function($ionicPlatform, $scope, $state, wthrService){
 	var pos;
 
-	wthrService.getCurrentPosition().then(function(data){ 
+	wthrService.getCurrentPosition().then(function(data){
 		pos = data;
 		$scope.weather = wthrService.getWeather(pos);
 	});
@@ -148,6 +152,12 @@ app.controller('registerCtrl', function($scope, $ionicSideMenuDelegate){
 })
 
 app.controller('emContactsCtrl', function($scope, $ionicSideMenuDelegate){
+	$scope.openMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+})
+
+app.controller('logonCtrl', function($scope, $ionicSideMenuDelegate){
 	$scope.openMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
