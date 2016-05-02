@@ -1,75 +1,76 @@
 <ion-view title="Enter Your Details">
-  <ion-content class="padding">
-    <h1>Enter Your Details</h1>
+  <ion-content>
     <div class="list">
+      <div class="item item-divider">
+        Personal information
+      </div>
       <label class="item item-input item-stacked-label">
         <span class="input-label">First Name</span>
-        <input type="text" placeholder="John">
+        <input type="text" placeholder="John" ng-model="user.firstname">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Last Name</span>
-        <input type="text" placeholder="Smith">
+        <input type="text" placeholder="Smith" ng-model="user.lastname">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Email</span>
-        <input type="email" placeholder="john@me.com">
+        <input type="email" placeholder="john@me.com" ng-model="user.email">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Date of Birth</span>
-        <input type="date" placeholder="DD/MM/YYYY">
+        <input type="date" placeholder="DD/MM/YYYY" ng-model="user.birthday">
       </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Address</span>
-        <input type="text" placeholder="Enter address">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">City</span>
-        <input type="text" placeholder="City name">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Country</span>
-        <input type="text" placeholder="Country name">
-      </label>
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Address</span>-->
+        <!--<input type="text" placeholder="Enter address">-->
+      <!--</label>-->
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">City</span>-->
+        <!--<input type="text" placeholder="City name">-->
+      <!--</label>-->
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Country</span>-->
+        <!--<input type="text" placeholder="Country name">-->
+      <!--</label>-->
       <label class="item item-input item-stacked-label">
         <span class="input-label">Contact telephone</span>
-        <input type="tel" placeholder="">
+        <input type="tel" placeholder="" ng-model="user.tel">
       </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Mobile telephone</span>
-        <input type="tel" placeholder="">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Vehicle type</span>
-        <input type="text" placeholder="">
-      </label>
+      <div class="item item-divider">
+        Vehicle information
+      </div>
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Vehicle type</span>-->
+        <!--<input type="text" placeholder="">-->
+      <!--</label>-->
       <label class="item item-input item-stacked-label">
         <span class="input-label">Vehicle brand</span>
-        <input type="text" placeholder="">
+        <input type="text" placeholder="" ng-model="user.vehicle.brand">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Vehicle model</span>
-        <input type="text" placeholder="">
+        <input type="text" placeholder="" ng-model="user.vehicle.model">
       </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Engine size</span>
-        <input type="text" placeholder="">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Car age</span>
-        <input type="text" placeholder="">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Year owned</span>
-        <input type="text" placeholder="">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Vehicle registration</span>
-        <input type="text" placeholder="">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Policy number</span>
-        <input type="text" placeholder="">
-      </label>
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Engine size</span>-->
+        <!--<input type="text" placeholder="">-->
+      <!--</label>-->
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Car age</span>-->
+        <!--<input type="text" placeholder="">-->
+      <!--</label>-->
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Year owned</span>-->
+        <!--<input type="text" placeholder="">-->
+      <!--</label>-->
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Vehicle registration</span>-->
+        <!--<input type="text" placeholder="">-->
+      <!--</label>-->
+      <!--<label class="item item-input item-stacked-label">-->
+        <!--<span class="input-label">Policy number</span>-->
+        <!--<input type="text" placeholder="">-->
+      <!--</label>-->
       <ul class="list">
 
         <li class="item item-toggle">
@@ -82,9 +83,9 @@
           </label>
 
         </li>
-        <a href="#/app/register-done" class="button button-block button-positive">
-          Submit
-        </a>
+        <button ng-click="submit()" class="button button-block button-positive">
+          Save data
+        </button>
       </ul>
 
 

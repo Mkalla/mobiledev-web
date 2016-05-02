@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('app', ['ionic', 'ngCordova', 'angularMoment']);
+var app = angular.module('app', ['ionic', 'ngCordova', 'angularMoment', "ui.router"]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -86,7 +86,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'menuContent': {
           templateUrl: 'templates/acc-rep-tab-1.html',
-          controller: 'accRepListCtrl'
+          controller: 'CameraCtrl'
         }}
     })
 
@@ -95,7 +95,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'menuContent': {
           templateUrl: 'templates/acc-rep-tab-2.html',
-          controller: 'accRepListCtrl'
+          controller: 'CameraCtrl'
         }}
     })
 
@@ -103,7 +103,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/acc-reps-tab3',views: {
         'menuContent': {
           templateUrl: 'templates/acc-rep-tab-3.html',
-          controller: 'accRepListCtrl'
+          controller: 'CameraCtrl'
         }}
     })
 
@@ -112,7 +112,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'menuContent': {
           templateUrl: 'templates/acc-rep-tab-4.html',
-          controller: 'accRepListCtrl'
+          controller: 'CameraCtrl'
         }
       }
     })
@@ -142,7 +142,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'menuContent': {
           templateUrl: 'templates/register-done.html',
-          controller: 'emRepSglCtrl'
         }
       }
     })

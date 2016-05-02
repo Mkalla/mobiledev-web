@@ -39,14 +39,19 @@
     <ion-nav-bar class="bar-positive">
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="openMenu()"></button>
+
       </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical" ng-click="popover.show($event)"></button>
+
+      </ion-nav-buttons>
+
     </ion-nav-bar>
     <ion-nav-view name="menuContent">
       <h1>test</h1>
       <!--Main content goes here-->
     </ion-nav-view>
   </ion-side-menu-content>
-
 
 
 
