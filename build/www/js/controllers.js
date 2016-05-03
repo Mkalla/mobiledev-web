@@ -142,6 +142,9 @@ app.controller('CameraCtrl', function ($state, $ionicPlatform, $scope, $rootScop
 
   if($rootScope.report == null) {
     $rootScope.report = {};
+    $rootScope.report.vehicle = {};
+    $rootScope.report.road = {}
+    $rootScope.report.witness = {};
   }
 
   $scope.submit = function(){
