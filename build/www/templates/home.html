@@ -26,14 +26,27 @@
       <p id="placeholder">Finding geolocation...</p>
     </div>
 
-    <ion-list>
-      <ion-item href="#/app/em-react">Emergency Reaction</ion-item>
-      <ion-item href="#/app/em-contacts">Emergency Contacts</ion-item>
-      <ion-item href="#/app/acc-reps-tab1">File Accident Report</ion-item>
-      <ion-item href="#/app/em-react">Guides</ion-item>
-      <ion-item href="#/app/faq">FAQs</ion-item>
-      <ion-item href="#/app/logon">Account</ion-item>
-    </ion-list>
+    <ul class="list">
+      <ion-item menu-close="" href="#/app/acc-reps-tab1" title="File Accident Report">
+        File Accident Report
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/acc-reps-list" title="View Past Reports">
+        View Past Reports
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/em-contacts" title="Emergency Contacts">
+        Emergency Contacts
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/em-react" title="Emergency Reaction Guide">
+        Emergency Reaction Guide
+      </ion-item>
+
+      <ion-item menu-close="" href="#/app/faq" title="FAQ">
+        FAQ
+      </ion-item>
+    </ul>
 
   </ion-content>
 </ion-view>
