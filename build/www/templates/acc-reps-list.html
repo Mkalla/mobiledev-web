@@ -1,45 +1,34 @@
 <ion-view title="Past Reports">
   <ion-content class="padding">
-
-
-    <div class="card">
-      <div class="item item-divider">
-        Date: 17/08/2009
+    <div ng-repeat="report in reports track by $index"class="card">
+      <div>
+        <div class="item item-divider">
+          Date: {{report.date}}
+        </div>
+        <div class="item item-text-wrap">
+          <h2>Vehicle status</h2>
+          <img ng-repeat="image in report.vehicle.images" class="photo" ng-src="{{image}}" width="32.8%">
+          <p>Comment: {{report.vehicle.comment}}</p>
+        </div>
+        <div class="item item-text-wrap">
+          <h2>Road Conditions</h2>
+          <p>Location: {{report.address}}</p>
+          <img ng-repeat="image in report.road.images" class="photo" ng-src="{{image}}" width="32.8%">
+          <p>Comment: {{report.road.comment}}</p>
+        </div>
+        <div class="item item-text-wrap">
+          <h2>Witness Report</h2>
+          <p>Name: {{report.witness.firstname}} {{report.witness.lastname}}</p>
+          <img ng-repeat="image in report.witness.images" class="photo" ng-src="{{image}}" width="32.8%">
+          <p>Comment: {{report.witness.comment}}</p>
+          <p>Telephone: {{report.witness.tel}}</p>
+        </div>
+        <div class="item item-text-wrap">
+          <h2>Driver information</h2>
+          <p>Name: {{report.driver.firstname}} {{report.driver.lastname}}</p>
+          <p>Birthday: {{report.driver.birthday}}</p>
+        </div>
       </div>
-      <div class="item item-text-wrap">
-        <h3>Location: Paisley</h3>
-        <p>Engine problem. Had to be towed to garage.</p>
-      </div>
-      <div class="item item-divider">
-        Date: 17/08/2013
-      </div>
-      <div class="item item-text-wrap">
-        <h3>Location: Glasgow</h3>
-        <p>Exhaust problem. Had to be towed to garage.</p>
-      </div>
-      <div class="item item-divider">
-        Date: 17/08/2013
-      </div>
-      <div class="item item-text-wrap">
-        <h3>Location: Glasgow</h3>
-        <p>Exhaust problem. Had to be towed to garage.</p>
-      </div>
-      <div class="item item-divider">
-        Date: 17/08/2013
-      </div>
-      <div class="item item-text-wrap">
-        <h3>Location: Glasgow</h3>
-        <p>Exhaust problem. Had to be towed to garage.</p>
-      </div>
-      <div class="item item-divider">
-        Date: 17/08/2013
-      </div>
-      <div class="item item-text-wrap">
-        <h3>Location: Glasgow</h3>
-        <p>Exhaust problem. Had to be towed to garage.</p>
-      </div>
-
     </div>
-
   </ion-content>
 </ion-view>

@@ -2,13 +2,13 @@
   <ion-content class="content">
     <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Name">
+        <input type="text" placeholder="First Name" ng-model="report.witness.firstname">
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Telephone number">
+        <input type="text" placeholder="Last Name" ng-model="report.witness.lastname">
       </label>
       <label class="item item-input">
-        <textarea placeholder="Comments"></textarea>
+        <input type="text" placeholder="Telephone number" ng-model="report.witness.tel">
       </label>
     </div>
 
@@ -16,7 +16,7 @@
     <div class="list">
       <div class="item item-divider item-button-right">
         WITNESS REPORT
-        <a href="#" ng-click="takePicture('vehicle')">
+        <a href="#" ng-click="takePicture('witness')">
           Add photo
         </a>
       </div>
@@ -24,7 +24,7 @@
 
       <div>
         <label class="item item-input">
-          <textarea rows="5" placeholder="Accident details here"></textarea>
+          <textarea rows="5" placeholder="Accident details here" ng-model="report.witness.comment"></textarea>
         </label>
       </div>
     </div>
@@ -33,6 +33,6 @@
   </ion-content>
   <div class="bar bar-footer">
     <button ng-click="goBack()" class="button button-clear">Back</button>
-    <a href="#/app/acc-rep-submit" class="button button-assertive">Submit</a>
+    <button ng-click="submit()" class="button button-assertive">Submit</button>
   </div>
 </ion-view>

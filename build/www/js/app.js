@@ -5,13 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('app', ['ionic', 'ngCordova', 'angularMoment', "ui.router"]);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('app', {
       url: '/app',
       abstract: true,
       templateUrl: 'templates/menu.html',
-      controller:"menuCtrl"
+      controller: "menuCtrl"
     })
 
     /* Routing for our pages and tabs */
@@ -51,7 +51,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'menuContent': {
           templateUrl: 'templates/register.html',
           controller: 'registerCtrl'
-        }}
+        }
+      }
     })
 
     .state('app.em-contacts', {
@@ -60,7 +61,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'menuContent': {
           templateUrl: 'templates/em-contacts.html',
           controller: 'emContactsCtrl'
-        }}
+        }
+      }
     })
 
     .state('app.em-react', {
@@ -69,7 +71,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'menuContent': {
           templateUrl: 'templates/em-react-home.html',
           controller: 'emReactCtrl'
-        }}
+        }
+      }
     })
 
     .state('app.acc-rep-submit', {
@@ -78,7 +81,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'menuContent': {
           templateUrl: 'templates/acc-rep-submit.html',
           controller: 'accRepCtrl'
-        }}
+        }
+      }
     })
 
     .state('app.acc-reports-tab-1', {
@@ -87,7 +91,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'menuContent': {
           templateUrl: 'templates/acc-rep-tab-1.html',
           controller: 'CameraCtrl'
-        }}
+        }
+      }
     })
 
     .state('app.acc-reports-tab-2', {
@@ -96,15 +101,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'menuContent': {
           templateUrl: 'templates/acc-rep-tab-2.html',
           controller: 'CameraCtrl'
-        }}
+        }
+      }
     })
 
     .state('app.acc-reports-tab-3', {
-      url: '/acc-reps-tab3',views: {
+      url: '/acc-reps-tab3', views: {
         'menuContent': {
           templateUrl: 'templates/acc-rep-tab-3.html',
           controller: 'CameraCtrl'
-        }}
+        }
+      }
     })
 
     .state('app.acc-reports-tab-4', {
@@ -201,6 +208,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 });
 
-app.run(function(amMoment) {
+app.run(function (amMoment) {
   amMoment.changeLocale('en');
 });
